@@ -1,0 +1,41 @@
+## About
+
+This application allows to log in to FTP server and parse trademarks data from xml files, existing on the provided FTP server.
+After parsing data from xml files, saves this information to mongo database. 
+Provides graphql interface to retrieve this data from Mongo database.
+
+
+## Getting Started
+
+### Prerequisites for local development
+* Python 3.9
+* Pipenv
+* Docker
+* Docker-compose
+
+### Config examples
+
+### .env
+```ini
+MONGO_HOST=<mongo_host>
+MONGO_PORT=<mongo_port>
+MONGO_INITDB_ROOT_USERNAME=<mongo_initdb_root_username>
+MONGO_INITDB_ROOT_PASSWORD=<mongo_initdb_root_password>
+MONGO_INITDB_DATABASE=<mongo_initdb_database>
+
+TRADE_MARK_COLLECTION=<trade_mark_collection>
+PARSED_FILE_COLLECTION=<parsed_file_collection>
+
+FTP_HOST=<ftp_host>
+FTP_USERNAME=<ftp_username>
+FTP_PASSWORD=<ftp_password>
+FTP_ROOT_FOLDER=<ftp_root_folder>
+```
+
+### Project setup
+
+```shell
+$ cd trade_mark_service/
+$ git checkout dev
+$ docker compose up
+```

@@ -1,0 +1,19 @@
+services:
+  mongodb:
+    image: mongo
+    env_file:
+      - .env
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+
+  web:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
